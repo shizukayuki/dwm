@@ -20,7 +20,7 @@ dwm: ${OBJ}
 	${CC} -o $@ ${OBJ} ${LDFLAGS}
 
 clean:
-	rm -f dwm ${OBJ} dwm-${VERSION}.tar.gz
+	rm -f dwm ${OBJ} dwm-${VERSION}.tar.gz config.h
 
 dist: clean
 	mkdir -p dwm-${VERSION}
@@ -43,3 +43,12 @@ uninstall:
 		${DESTDIR}${MANPREFIX}/man1/dwm.1
 
 .PHONY: all clean dist install uninstall
+
+quilt-refresh:
+	quilt pop -a > /dev/null || test "$$?" -eq 2
+	QUILT_NO_DIFF_INDEX=1 quilt push --refresh -a
+
+quilt-install: clean quilt-refresh
+	$(MAKE) install
+
+.PHONY: quilt-refresh quilt-install
