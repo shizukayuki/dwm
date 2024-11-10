@@ -43,16 +43,18 @@
  	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
  	{ MODKEY,                       XK_space,  setlayout,      {0} },
  	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
-@@ -94,7 +93,7 @@ static const Key keys[] = {
+@@ -94,8 +93,8 @@ static const Key keys[] = {
  	TAGKEYS(                        XK_7,                      6)
  	TAGKEYS(                        XK_8,                      7)
  	TAGKEYS(                        XK_9,                      8)
 -	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+-	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} },
++	{ MODKEY|ShiftMask,             XK_q,      quit,           {1} },
 +	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {0} },
  };
  
  /* button definitions */
-@@ -113,4 +112,3 @@ static const Button buttons[] = {
+@@ -114,4 +113,3 @@ static const Button buttons[] = {
  	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
  	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
  };
