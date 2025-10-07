@@ -1,6 +1,6 @@
 --- dwm.orig/config.def.h
 +++ dwm/config.def.h
-@@ -95,6 +95,7 @@ static const Key keys[] = {
+@@ -96,6 +96,7 @@ static const Key keys[] = {
  	TAGKEYS(                        XK_8,                      7)
  	TAGKEYS(                        XK_9,                      8)
  	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
